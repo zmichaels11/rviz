@@ -44,8 +44,11 @@
 
 #define ASSIMP_UNIFIED_HEADER_NAMES 1
 #if defined(ASSIMP_UNIFIED_HEADER_NAMES)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-copy"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
+#pragma GCC diagnostic pop
 #else
 #include <assimp/aiScene.h>
 #endif

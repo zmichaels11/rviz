@@ -364,6 +364,8 @@ public:
   MapIterator
   mapIterator() const;
 
+  Config & operator=(const Config &) = default;
+
 private:
   explicit Config(NodePtr node);
 

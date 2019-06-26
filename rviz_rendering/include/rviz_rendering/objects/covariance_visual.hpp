@@ -34,7 +34,10 @@
 #include <array>
 #include <memory>
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-copy"
 #include <Eigen/Dense>  // NOLINT: cpplint cannot handle correct include here
+#pragma GCC diagnostic pop
 
 #ifdef __clang__
 # pragma clang diagnostic push
