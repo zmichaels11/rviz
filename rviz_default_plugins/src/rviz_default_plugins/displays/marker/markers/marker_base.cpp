@@ -53,6 +53,7 @@
 
 #include "rviz_common/display_context.hpp"
 #include "rviz_common/frame_manager_iface.hpp"
+#include "rviz_common/interactive_object.hpp"
 
 #include "rviz_default_plugins/displays/marker/marker_common.hpp"
 #include "rviz_default_plugins/displays/marker/markers/marker_selection_handler.hpp"
@@ -135,14 +136,12 @@ bool MarkerBase::transform(
   return true;
 }
 
-// TODO(Martin-Idel-SI): Use again when interactive markers are ported
-// void MarkerBase::setInteractiveObject(InteractiveObjectWPtr control)
-// {
-//   if(handler_)
-//   {
-//     handler_->setInteractiveObject(control);
-//   }
-// }
+void MarkerBase::setInteractiveObject(rviz_common::InteractiveObjectWPtr control)
+{
+  if (handler_) {
+    handler_->setInteractiveObject(control);
+  }
+}
 
 void MarkerBase::setPosition(const Ogre::Vector3 & position)
 {
